@@ -1,0 +1,76 @@
+The Great Gatsby,F. Scott Fitzgerald
+To Kill a Mockingbird,Harper Lee
+Pride and Prejudice,Jane Austen
+1984,George Orwell
+The Catcher in the Rye,J.D. Salinger
+The Hobbit,J.R.R. Tolkien
+The Da Vinci Code,Dan Brown
+The Girl with the Dragon Tattoo,Stieg Larsson
+The Hitchhiker's Guide to the Galaxy,Douglas Adams
+The Lord of the Rings,J.R.R. Tolkien
+One Hundred Years of Solitude,Gabriel Garcia Marquez
+Crime and Punishment,Fyodor Dostoevsky
+Wuthering Heights,Emily Bronte
+The Brothers Karamazov,Fyodor Dostoevsky
+The Picture of Dorian Gray,Oscar Wilde
+Brave New World,Aldous Huxley
+Animal Farm,George Orwell
+The Sun Also Rises,Ernest Hemingway
+Heart of Darkness,Joseph Conrad
+The Grapes of Wrath,John Steinbeck
+The Adventures of Huckleberry Finn,Mark Twain
+The Adventures of Tom Sawyer,Mark Twain
+Les Miserables,Victor Hugo
+Anna Karenina,Leo Tolstoy
+War and Peace,Leo Tolstoy
+The Scarlet Letter,Nathaniel Hawthorne
+The Count of Monte Cristo,Alexandre Dumas
+Frankenstein,Mary Shelley
+Dracula,Bram Stoker
+Alice's Adventures in Wonderland,Lewis Carroll
+Through the Looking-Glass,Lewis Carroll
+The Strange Case of Dr. Jekyll and Mr. Hyde,Robert Louis Stevenson
+The Time Machine,H.G. Wells
+The War of the Worlds,H.G. Wells
+Moby-Dick,Herman Melville
+The Call of the Wild,Jack London
+White Fang,Jack London
+The Adventures of Sherlock Holmes,Arthur Conan Doyle
+The Memoirs of Sherlock Holmes,Arthur Conan Doyle
+The Hound of the Baskervilles,Arthur Conan Doyle
+The Return of Sherlock Holmes,Arthur Conan Doyle
+A Study in Scarlet,Arthur Conan Doyle
+The Sign of Four,Arthur Conan Doyle
+Jane Eyre,Charlotte Bronte
+Sense and Sensibility,Jane Austen
+Northanger Abbey,Jane Austen
+Mansfield Park,Jane Austen
+Emma,Jane Austen
+Persuasion,Jane Austen
+Little Women,Louisa May Alcott
+The Secret Garden,Frances Hodgson Burnett
+The Wind in the Willows,Kenneth Grahame
+The Adventures of Pinocchio,Carlo Collodi
+The Wonderful Wizard of Oz,L. Frank Baum
+Treasure Island,Robert Louis Stevenson
+Kidnapped,Robert Louis Stevenson
+David Copperfield,Charles Dickens
+Oliver Twist,Charles Dickens
+A Tale of Two Cities,Charles Dickens
+Great Expectations,Charles Dickens
+The Adventures of Sherlock Holmes,Arthur Conan Doyle
+The Call of the Wild,Jack London
+The Picture of Dorian Gray,Oscar Wilde
+The Portrait of a Lady,Henry James
+The Three Musketeers,Alexandre Dumas
+The Jungle Book,Rudyard Kipling
+The Moonstone,Wilkie Collins
+The Woman in White,Wilkie Collins
+The Phantom of the Opera,Gaston Leroux
+The Black Cat and Other Stories,Edgar Allan Poe
+The Tell-Tale Heart and Other Stories,Edgar Allan Poe
+The Masque of the Red Death and Other Tales,Edgar Allan Poe
+The Raven and Other Poems,Edgar Allan Poe
+The Arabian Nights,Anonymous
+Robinson Crusoe,Daniel Defoe
+Gulliver's Travels,Jonathan Swift
