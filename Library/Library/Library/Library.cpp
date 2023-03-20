@@ -39,9 +39,30 @@ void Library::addBook(Book b)
 	std::cout << "book " << b.bookName << " is already in list " << std::endl;
 }
 
-void Library::removeLastBook()
+void Library::removeBook(Book b)
 {
-	listOfBooks.pop_back();
+	if (IsBookInLib(b.bookName))
+	{
+		for (int i = 0; i < listOfBooks.size(); i++)
+		{
+			if (listOfBooks[i].bookName == b.bookName)
+			{
+				listOfBooks.erase(listOfBooks.begin() + i);
+			}
+		}
+
+		for (int i = 0; i < author2books[b.AuthorName].size(); i++)
+		{
+			if (author2books[b.AuthorName][i] == b.bookName)
+			{
+				author2books[b.AuthorName].erase(author2books[b.AuthorName].begin() + i);
+			}
+		}
+	}
+	else
+	{
+		std::cout << "No book with name " << b.bookName << " to delete" << std::endl;
+	}
 }
 
 bool Library::IsBookInLib(std::string bookName)
@@ -58,14 +79,14 @@ bool Library::IsBookInLib(std::string bookName)
 
 void Library::searchForBook(std::string bookName)
 {
-	for (auto book : listOfBooks)
+	if (IsBookInLib(bookName))
 	{
-		if (book.bookName == bookName)
-		{
-			std::cout << "book found!" << std::endl;
-		}
+		std::cout << "book found!" << std::endl;
 	}
-	std::cout << "book not found!" << std::endl;
+	else
+	{
+		std::cout << "book not found!" << std::endl;
+	}
 }
 
 void Library::viewAuthorBook(std::string authorName)

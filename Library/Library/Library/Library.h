@@ -14,7 +14,7 @@ public:
 	Library();
 	Library(std::string fileName);
 	void addBook(Book b);
-	void removeLastBook();
+	void removeBook(Book b);
 	bool IsBookInLib(std::string bookName);
 	void searchForBook(std::string bookName);
 	void viewAuthorBook(std::string authorName);
