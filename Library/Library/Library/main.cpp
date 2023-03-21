@@ -10,7 +10,7 @@ int main()
 
     Library l("books"); //library object that read file called book contains book names and the author of each book
 
-    //Library l1; // library object that instantiate empty library
+    //Library l1; // library object that instantiates empty library
 
     //l.addBook(b);
 
