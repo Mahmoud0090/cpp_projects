@@ -31,7 +31,8 @@ int main()
         {
             if (guess == word[i])
             {
-                emp[i * 2] = guess;
+                int x = i * 2;
+                emp[x] = guess;
                 trueLettersCount++;
                 letterfound = true;
             }
