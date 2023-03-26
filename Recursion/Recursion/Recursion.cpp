@@ -43,7 +43,6 @@ int sum(int num)
     {
         return 1;
     }
-
     return num + sum(num - 1);
 }
 
@@ -112,22 +111,132 @@ bool isBalanced(TreeNode* root)
     else return isBalanced(root->left) && isBalanced(root->right);
 }
 
+TreeNode* insertValue(int data, TreeNode* head)
+{
+    if (head == NULL)
+    {
+        TreeNode* head = new TreeNode(data);
+        return head;
+    }
+
+    if (data > head->val)
+    {
+        head->right = insertValue(data, head->right);
+    }
+
+    else
+    {
+        head->left = insertValue(data, head->left);
+    }
+    return head;
+}
+
+void printLeaves(TreeNode* root)
+{
+    if (root == NULL) return;
+
+    if (root->left == NULL && root->right == NULL)
+    {
+        cout << root->val << " , ";
+        return;
+    }
+
+    if (root->left)
+    {
+        printLeaves(root->left);
+    }
+    if (root->right)
+    {
+        printLeaves(root->right);
+    }
+}
+
+/****recursion linkedlist*****/
+
+struct Node
+{
+    int val;
+    Node* next;
+
+    Node() 
+    {
+        this->val = 0; 
+        this->next = nullptr; 
+    }
+    Node(int val)
+    {
+        this->val = val;
+        this->next = nullptr;
+    }
+};
+
+Node* reverseList(Node* head)
+{
+    if (head == NULL || head->next == nullptr)
+    {
+        return head;
+    }
+
+    Node* p = reverseList(head->next);
+    head->next->next = head;
+    head->next = nullptr;
+
+    return p;
+}
+
+Node* sortedMerge(Node* a, Node* b)
+{
+    if (a == NULL) return b;
+    if (b == NULL) return a;
+
+    if (a->val <= b->val)
+    {
+        a->next = sortedMerge(a->next, b);
+        return a;
+    }
+
+    else if (b->val < a->val)
+    {
+        b->next = sortedMerge(a, b->next);
+        return b;
+    }
+}
+
 int main()
 {
-    vector<int> x = { -1,0,2,4,6,9,10,13,16,29,97,100,555 };
+    /*vector<int> x = {-1,0,2,4,6,9,10,13,16,29,97,100,555};
 
     int y = fibb(11);
 
-    cout << y << endl;
+    cout << y << endl;*/
 
-
-    TreeNode* n = new TreeNode(10);
+    TreeNode* n = new TreeNode(20);
     n->left = new TreeNode(8);
     n->left->right = new TreeNode(14);
     n->left->left = new TreeNode(3);
-    n->right = new TreeNode(7);
-    n->right->left = new TreeNode(10);
-    n->right->right = new TreeNode(4);
-    n->right->right->right = new TreeNode(4);
-    n->right->right->right->right = new TreeNode(9);
+    n->right = new TreeNode(30);
+    n->right->left = new TreeNode(25);
+    n->right->right = new TreeNode(35);
+    n->right->right->right = new TreeNode(40);
+    n->right->right->right->right = new TreeNode(50);
+
+    /*Node* n = new Node(5);
+    n->next = new Node(7);
+    n->next->next = new Node(9);
+    n->next->next->next = new Node(10);
+
+    Node* h = new Node(1);
+    h->next = new Node(4);
+    h->next->next = new Node(17);
+    h->next->next->next = new Node(30);*/
+
+    //TreeNode* h = insertValue(6, n);
+
+    //cout << h->val << endl;
+
+    printLeaves(n);
+
+    //Node* head = sortedMerge(n , h);
+    
+    
 }

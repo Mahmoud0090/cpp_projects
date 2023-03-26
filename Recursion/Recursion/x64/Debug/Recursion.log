@@ -1,2 +1,3 @@
 ﻿  Recursion.cpp
+C:\Users\pc\Cpp_projects\Recursion\Recursion\Recursion.cpp(203): warning C4715: 'sortedMerge': not all control paths return a value
   Recursion.vcxproj -> C:\Users\pc\Cpp_projects\Recursion\x64\Debug\Recursion.exe
