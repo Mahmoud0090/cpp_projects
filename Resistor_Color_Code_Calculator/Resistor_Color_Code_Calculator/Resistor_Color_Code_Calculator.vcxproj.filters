@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Resistor_Color_Code_Calculator.cpp">
+    <ClCompile Include="src\Resistor_Color_Code_Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

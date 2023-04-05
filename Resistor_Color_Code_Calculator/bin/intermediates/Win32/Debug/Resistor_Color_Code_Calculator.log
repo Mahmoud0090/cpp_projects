@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(498,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Resistor_Color_Code_Calculator.cpp
+C:\Users\pc\Cpp_projects\Resistor_Color_Code_Calculator\Resistor_Color_Code_Calculator\src\Resistor_Color_Code_Calculator.cpp(131,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\pc\Cpp_projects\Resistor_Color_Code_Calculator\Resistor_Color_Code_Calculator\src\Resistor_Color_Code_Calculator.cpp(133,62): warning C4018: '<': signed/unsigned mismatch
+C:\Users\pc\Cpp_projects\Resistor_Color_Code_Calculator\Resistor_Color_Code_Calculator\src\Resistor_Color_Code_Calculator.cpp(134,43): warning C4018: '<': signed/unsigned mismatch
+C:\Users\pc\Cpp_projects\Resistor_Color_Code_Calculator\Resistor_Color_Code_Calculator\src\Resistor_Color_Code_Calculator.cpp(64,38): warning C4101: 'e': unreferenced local variable
+  Resistor_Color_Code_Calculator.vcxproj -> C:\Users\pc\Cpp_projects\Resistor_Color_Code_Calculator\bin\Win32\Debug\Resistor_Color_Code_Calculator.exe
