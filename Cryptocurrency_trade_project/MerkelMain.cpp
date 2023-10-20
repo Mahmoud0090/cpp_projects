@@ -16,7 +16,6 @@ void MerkelMain::init()
         userInput = getUserOption();
         processUserOption(userInput);
     }
-
 }
 
 void MerkelMain::loadOrderBook()

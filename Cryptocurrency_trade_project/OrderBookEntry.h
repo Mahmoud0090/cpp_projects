@@ -1,4 +1,4 @@
-//#pragma once
+#pragma once
 #include<string>
 
 enum class orderBookType {bid , ask};
@@ -19,4 +19,6 @@ class OrderBookEntry
                        std::string _timestamp,
                        std::string _product,
                        orderBookType _orderType);
+
+        static orderBookType stringToOrderBookType(std::string s);
 };
