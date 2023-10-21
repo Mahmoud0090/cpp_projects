@@ -1,6 +1,7 @@
 #pragma once
 #include "OrderBookEntry.h"
 #include <vector>
+#include <fstream>
 
 
 class CSVReader

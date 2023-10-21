@@ -6,17 +6,51 @@ CSVReader::CSVReader()
 
 }
 
-std::vector<OrderBookEntry> CSVReader::readCSV(std::string csvFile)
+std::vector<OrderBookEntry> CSVReader::readCSV(std::string csvFileName)
 {
-    std::vector<OrderBookEntry> orders;
-    return orders;
+    std::vector<OrderBookEntry> entries;
+
+    std::ifstream csvFile{csvFileName};
+    std::string line;
+
+    if(csvFile.is_open())
+    {
+        while(std::getline(csvFile , line))
+        {
+            OrderBookEntry ode = stringtoOBE(tokenize(line , ','));
+            entries.push_back(ode);
+        }
+    }
+
+    std::cout<<"CSVreader::readCSV entries size "<< entries.size()<<" "<<std::endl;
+
+    return entries;
 }
 
 
 std::vector<std::string> CSVReader::tokenize(std::string csvLine , char seperator)
 {
-    std::vector<std::string> vec;
-    return vec;
+    std::vector<std::string> tokens;
+    std::string token;
+
+    signed int start , end;
+
+    start = csvLine.find_first_not_of(seperator , 0);
+    do
+    {
+        end = csvLine.find_first_of(seperator , start);
+        if(start == csvLine.length() || start == end) break;
+
+        if(end >= 0) token = csvLine.substr(start , end - start);
+
+        else token = csvLine.substr(start , csvLine.length() - start);
+
+        tokens.push_back(token);
+
+        start = end + 1;
+
+    } while (end > 0);
+    return tokens;
 }
 
 
@@ -42,7 +76,7 @@ OrderBookEntry CSVReader::stringtoOBE(std::vector<std::string> tokens)
         throw;
     }
 
-    OrderBookEntry ord(1,2,"dfgfd","gfdfhgf" , orderBookType::ask);
+    OrderBookEntry ord(price,amount,tokens[0],tokens[1] , 
+                      OrderBookEntry::stringToOrderBookType(tokens[2]));
     return ord;
-
 }

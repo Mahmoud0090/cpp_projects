@@ -14,3 +14,17 @@ OrderBookEntry::OrderBookEntry(double _price,
         {
 
         }
+
+orderBookType OrderBookEntry::stringToOrderBookType(std::string s)
+{
+  if (s == "ask")
+  {
+    return orderBookType::ask;
+  }
+
+  if (s == "bid")
+  {
+    return orderBookType::bid;
+  }
+  return orderBookType::unknown;
+}
