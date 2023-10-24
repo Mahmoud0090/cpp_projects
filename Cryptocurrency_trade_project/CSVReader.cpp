@@ -17,8 +17,15 @@ std::vector<OrderBookEntry> CSVReader::readCSV(std::string csvFileName)
     {
         while(std::getline(csvFile , line))
         {
-            OrderBookEntry ode = stringtoOBE(tokenize(line , ','));
-            entries.push_back(ode);
+            try
+            {
+                OrderBookEntry ode = stringtoOBE(tokenize(line , ','));
+                entries.push_back(ode);
+            }
+            catch(const std::exception& e)
+            {
+                std::cout<<"CSVreader::readCSV bad data "<<std::endl;
+            }
         }
     }
 
@@ -67,7 +74,6 @@ OrderBookEntry CSVReader::stringtoOBE(std::vector<std::string> tokens)
     {
         price = std::stod(tokens[3]);
         amount = std::stod(tokens[4]);
-        std::cout<<price << " : "<<amount<<std::endl;
     }
     catch(const std::exception& e)
     {

@@ -8,7 +8,6 @@ MerkelMain::MerkelMain()
 
 void MerkelMain::init()
 {
-    loadOrderBook();
     int userInput;
     while (true)
     {
@@ -18,23 +17,36 @@ void MerkelMain::init()
     }
 }
 
-void MerkelMain::loadOrderBook()
-{
-    OrderBookEntry order1 {12.5 , 85.5 , "14/1/2023" , "BTC/USDT" , orderBookType::ask};
-    OrderBookEntry order2 {21.6 , 70.5 , "15/5/2022" , "BTC/USDT" , orderBookType::bid};
-
-    orders.push_back(order1);
-    orders.push_back(order2);
-}
-
 void MerkelMain::printHelp()
 {
     std::cout<<"Your aim is to make money , analyze the market and make bids and offers "<<std::endl;
 }
+
 void MerkelMain::printMarketStats()
 {
-    std::cout<<"you have "<<orders.size() <<" entries "<<std::endl;
+
+    for(std::string const& p : orderBook.getKnownProducts())
+    {
+        std::cout<<"product : "<<p<< std::endl;
+    }
+    /* std::cout<<"you have "<<orders.size() <<" entries "<<std::endl;
+    unsigned int asks = 0;
+    unsigned int bids = 0;
+
+    for(OrderBookEntry& ord : orders)
+    {
+        if(ord.orderType == orderBookType::ask)
+        {
+            asks++;
+        }
+        if(ord.orderType == orderBookType::bid)
+        {
+            bids++;
+        }
+    }
+    std::cout<< " number of asks is : "<<asks<<" and bids is "<<bids<<std::endl; */
 }
+
 void MerkelMain::enterOffer()
 {
     std::cout<<"Make an offer , enter the amount "<<std::endl;
