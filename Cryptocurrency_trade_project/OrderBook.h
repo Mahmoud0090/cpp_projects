@@ -16,6 +16,10 @@ class OrderBook
                                              std::string product,
                                              std::string timeStamp);
 
+
+        static double getHighPrice(std::vector<OrderBookEntry>& orders);
+        static double getLowPrice(std::vector<OrderBookEntry>& orders);
+
     private:
         std::vector<OrderBookEntry> orders;
 };
