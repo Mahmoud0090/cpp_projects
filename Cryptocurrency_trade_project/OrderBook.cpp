@@ -28,10 +28,20 @@ std::vector<std::string> OrderBook:: getKnownProducts()
 }
         
         
-std::vector<OrderBookEntry> OrderBook::getOrders(orderBookType order, 
+std::vector<OrderBookEntry> OrderBook::getOrders(orderBookType type, 
                                         std::string product,
-                                        std::string typeStamp)
+                                        std::string timeStamp)
 {
     std::vector<OrderBookEntry> orders_sub;
+
+    for(OrderBookEntry &e : orders)
+    {
+        if(e.orderType == type &&
+           e.product == product &&
+           e.timestamp == timeStamp)
+        {
+            orders_sub.push_back(e);
+        }
+    }
     return orders_sub;
 }
