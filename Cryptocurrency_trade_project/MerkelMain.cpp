@@ -59,7 +59,6 @@ void MerkelMain::enterAsk()
 {
     std::cout<<"Make an Ask , enter the amount : product,price,amount eg ETH/BTC,200,0.5 "<<std::endl;
     std::string input;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
     std::getline(std::cin , input);
 
@@ -72,12 +71,16 @@ void MerkelMain::enterAsk()
 
     else
     {
+        try{
         OrderBookEntry obe = CSVReader::stringtoOBE(tokens[1],
                                                     tokens[2],
                                                     currentTime,
                                                     tokens[0],
                                                     orderBookType::ask);
-                        
+        }catch(const std::exception& e){
+
+            std::cout<<"enterAsk bad input"<<std::endl;
+        }                
     }
 
     std::cout<<"You typed : "<<input<<std::endl;
@@ -121,9 +124,19 @@ void MerkelMain::PrintMenu()
 }
 int MerkelMain::getUserOption()
 {
-    int userOption;
+    int userOption = 0;
+    std::string line;
     std::cout<<"Type in 1-6 "<<std::endl;
-    std::cin >> userOption;
+
+    std::getline(std::cin , line);
+
+    try{
+        userOption = std::stoi(line);
+    }catch(const std::exception& e)
+    {
+        //
+    }
+    
     std::cout<<"You chose "<<userOption<<std::endl;
     return userOption;
 }
