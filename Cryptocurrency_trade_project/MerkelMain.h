@@ -3,6 +3,7 @@
 #include "OrderBookEntry.h"
 #include "CSVReader.h"
 #include "OrderBook.h"
+#include <limits>
 
 class MerkelMain
 {
@@ -12,7 +13,7 @@ class MerkelMain
     private:
         void printHelp();
         void printMarketStats();
-        void enterOffer();
+        void enterAsk();
         void enterBid();
         void printWallet();
         void gotoNextTimeFrame();

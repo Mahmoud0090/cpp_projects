@@ -31,7 +31,7 @@ void MerkelMain::printMarketStats()
         std::cout<<"product : "<<p<< std::endl;
 
         std::vector<OrderBookEntry> entries = orderBook.getOrders(orderBookType::ask,
-                                                                  p,"2020/03/17 17:01:24.884492");
+                                                                  p,currentTime);
 
         std::cout<<"Asks seen : "<<entries.size()<<std::endl;
         std::cout<<"Max asks : "<<OrderBook::getHighPrice(entries)<<std::endl;
@@ -55,9 +55,32 @@ void MerkelMain::printMarketStats()
     std::cout<< " number of asks is : "<<asks<<" and bids is "<<bids<<std::endl; */
 }
 
-void MerkelMain::enterOffer()
+void MerkelMain::enterAsk()
 {
-    std::cout<<"Make an offer , enter the amount "<<std::endl;
+    std::cout<<"Make an Ask , enter the amount : product,price,amount eg ETH/BTC,200,0.5 "<<std::endl;
+    std::string input;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+
+    std::getline(std::cin , input);
+
+    std::vector<std::string> tokens = CSVReader::tokenize(input , ',');
+
+    if(tokens.size() != 3)
+    {
+        std::cout<<"bad input "<<input<<std::endl;
+    }
+
+    else
+    {
+        OrderBookEntry obe = CSVReader::stringtoOBE(tokens[1],
+                                                    tokens[2],
+                                                    currentTime,
+                                                    tokens[0],
+                                                    orderBookType::ask);
+                        
+    }
+
+    std::cout<<"You typed : "<<input<<std::endl;
 }
 void MerkelMain::enterBid()
 {
@@ -81,7 +104,7 @@ void MerkelMain::PrintMenu()
     std::cout<<"2: Print exchange stats "<<std::endl;
 
     //3-make an offer
-    std::cout<<"3: Make an offer "<<std::endl;
+    std::cout<<"3: Make an Ask "<<std::endl;
     
     //4-make a bid
     std::cout<<"4: Make a bid "<<std::endl;
@@ -123,7 +146,7 @@ void MerkelMain::processUserOption(int userOption)
 
     if(userOption == 3)
     {
-        enterOffer();
+        enterAsk();
     } 
 
     if(userOption == 4)
