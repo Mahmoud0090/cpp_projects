@@ -77,10 +77,12 @@ void MerkelMain::enterAsk()
                                                     currentTime,
                                                     tokens[0],
                                                     orderBookType::ask);
-        }catch(const std::exception& e){
+        orderBook.insertOrder(obe); 
+        }
+        catch(const std::exception& e){
 
-            std::cout<<"enterAsk bad input"<<std::endl;
-        }                
+            std::cout<<"MerkelMain enterAsk bad input"<<std::endl;
+        }
     }
 
     std::cout<<"You typed : "<<input<<std::endl;

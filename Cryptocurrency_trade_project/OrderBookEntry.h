@@ -20,5 +20,10 @@ class OrderBookEntry
                        std::string _product,
                        orderBookType _orderType);
 
+        static bool compareByTimestamp(OrderBookEntry& e1 , OrderBookEntry& e2)
+        {
+            return e1.timestamp < e2.timestamp;
+        }
+
         static orderBookType stringToOrderBookType(std::string s);
 };
